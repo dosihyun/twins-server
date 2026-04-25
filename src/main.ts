@@ -25,7 +25,11 @@ async function bootstrap() {
   );
 
   const port = Number(process.env.PORT ?? 3000);
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   console.log(`[twins-server] listening on :${port}`);
 }
-bootstrap();
+
+bootstrap().catch((err) => {
+  console.error('[twins-server] bootstrap failed:', err);
+  process.exit(1);
+});
