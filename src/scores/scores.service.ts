@@ -7,7 +7,7 @@ import { GameId, SubmitScoreDto } from './dto/submit-score.dto';
 const LOWER_IS_BETTER: Record<GameId, boolean> = {
   rps: false,
   guess: true,
-  ttt: false,
+  ttt: true,
   memory: true,
   reaction: true,
 };
