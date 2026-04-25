@@ -9,4 +9,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('health')
+  health() {
+    return {
+      status: 'ok',
+      service: 'twins-server',
+      time: new Date().toISOString(),
+    };
+  }
 }
